@@ -12,7 +12,7 @@ window.onload = function () {
   let scene = new THREE.Scene();
 
   let camera = new THREE.PerspectiveCamera(45, width / height, 30, 5000);
-  camera.position.set(200, 0, 1000);
+  camera.position.set(100, 0, 1000);
 
   let light = new THREE.AmbientLight(0xffffff);
   scene.add(light);
@@ -34,6 +34,12 @@ window.onload = function () {
   }
 
   addRotation();
+
+  function changeColorOnAnimation() {
+    mesh.material.color.set(0xccd723);
+  }
+
+  setTimeout(changeColorOnAnimation, 2000);
 
   renderer.render(scene, camera);
 };
